@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
 
@@ -16,9 +18,24 @@
                 }
             }
             return true;
+
+        let numero = prompt('Introduzca un numero de 4');
+        let array = numero.split('');
+        let resultado = 0;
+        while (array.length > 4 || iguales(array)) {
+            numero = prompt('Solo se puede introducir un numero de 4 digitos');
+            array = numero.split('');
+            if (iguales(array)) {
+                numero = prompt('no introducir numero repetidos');
+                array = numero.split('');
+                }
+            }
+
+
         };
-    
-    
+
+
     </script>
 </body>
+
 </html>
