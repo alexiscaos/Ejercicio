@@ -20,11 +20,11 @@
             return true;
         }
     
-        let numero = prompt('Introduzca un numero de 4');
+        let numero = prompt('Introduzca un numero de 4 digitos');
         let array = numero.split('');
 
         let resultado = 0;
-        while (array.length > 4 || iguales(array)) {
+        while ((array.length > 4  || array.length < 4  )|| iguales(array)) {
             numero = prompt('Solo se puede introducir un numero de 4 digitos');
             array = numero.split('');
             if (iguales(array)) {
@@ -40,13 +40,18 @@
             let ascendente = Math.floor(array.join(""));
             let descendente = Math.floor(array.reverse().join(""));
             resultado = descendente - ascendente;
-
+            console.log(descendente+' - '+ ascendente+' -> '+ resultado)
             if (resultado == 6174) {
                 console.log('Ha encontrado el numero Kaprekar ' + resultado)
-            }
-            numero = resultado.toString();
+            }else if(resultado == 0){
+                numero = prompt('Se ha llegado a 0, Introduzca otro numero');
+                array = numero.split('');
+            }else{
+                numero = resultado.toString();
 
-            array = numero.split('');
+                array = numero.split('');
+            }
+            
         }
 
 
