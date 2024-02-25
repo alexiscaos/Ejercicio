@@ -20,9 +20,23 @@
             return true;
         }
     
-        let numero = prompt('Introduzca un numero de 4');
+        let numero = prompt('Introduzca un numero de 4 digitos');
         let array = numero.split('');
+        let onlyNum = /^[0-9]*$/;
+        if(console.log(!onlyNum.test(numero))){
+            console.log('no Caracteres')
+        
+            
+        while (console.log(!onlyNum.test(numero))) {
+            numero = prompt('Introduzca 4 digitos');
+            array = numero.split('');
+            if (iguales(array)) {
+                numero = prompt('no introducir numero repetidos');
+                array = numero.split('');
+            }
+        }
 
+        }
         let resultado = 0;
         while (array.length > 4 || iguales(array)) {
             numero = prompt('Solo se puede introducir un numero de 4 digitos');
