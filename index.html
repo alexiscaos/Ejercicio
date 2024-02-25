@@ -28,11 +28,26 @@
             if (iguales(array)) {
                 numero = prompt('no introducir numero repetidos');
                 array = numero.split('');
-                }
             }
+        }
 
+        while (resultado !== 6174 || iguales(array)) {
 
-        };
+            array.sort((a, b) => a - b);
+
+            let ascendente = Math.floor(array.join(""));
+            let descendente = Math.floor(array.reverse().join(""));
+            resultado = descendente - ascendente;
+
+            if (resultado == 6174) {
+                console.log('Ha encontrado el numero Kaprekar ' + resultado)
+            }
+            numero = resultado.toString();
+
+            array = numero.split('');
+        }
+
+    };
 
 
     </script>
