@@ -22,8 +22,8 @@
     
         let numero = prompt('Introduzca un numero de 4 digitos');
         let array = numero.split('');
-
         let resultado = 0;
+        let contador=0;
         while ((array.length > 4  || array.length < 4  )|| iguales(array)) {
             numero = prompt('Solo se puede introducir un numero de 4 digitos');
             array = numero.split('');
@@ -41,6 +41,7 @@
             let descendente = Math.floor(array.reverse().join(""));
             resultado = descendente - ascendente;
             console.log(descendente+' - '+ ascendente+' -> '+ resultado)
+            contador++;
             if (resultado == 6174) {
                 console.log('Ha encontrado el numero Kaprekar ' + resultado)
             }else if(resultado == 0){
@@ -53,7 +54,7 @@
             }
             
         }
-
+        conole.log('Se ha ha hecho '+contador+'veces la operacion para llegar al numero')
 
 
 
